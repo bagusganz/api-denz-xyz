@@ -2273,6 +2273,34 @@ router.get('/textpro/greenhorror', async(req, res, next) => {
   }
 });
 
+router.get('/textpro/tonder', async(req, res, next) => {
+
+  const apikey = req.query.apikey;
+
+  const text = req.query.text;
+  
+  if(!apikey) return res.json(loghandler.notparam)
+  if(!text) return res.json(loghandler.nottext)
+  
+  if(listkey.includes(apikey)){
+    zrapi 
+  .textpro("https://textpro.me/create-thunder-text-effect-online-881.html", [
+    text,
+  ])
+  .then((data) => {
+    res.json({
+      status: true,
+      code: 200,
+      creator: `${creator}`,
+      result: data
+    })
+  })
+  .catch((err) => console.log(err));
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+});
+
 router.get('/textpro/drop-water', async(req, res, next) => {
 
 
@@ -2371,6 +2399,36 @@ router.get('/textpro/porn-hub', async(req, res, next) => {
   if(listkey.includes(apikey)){
     zrapi 
   .textpro("https://textpro.me/pornhub-style-logo-online-generator-free-977.html", [
+    text, text2
+  ])
+  .then((data) => {
+    res.json({
+      status: true,
+      code: 200,
+      creator: `${creator}`,
+      result: data
+    })
+  })
+  .catch((err) => console.log(err));
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+});
+
+router.get('/textpro/marvellogo', async(req, res, next) => {
+
+  const apikey = req.query.apikey;
+
+  const text = req.query.text1;
+  const text2 = req.query.text2;
+  
+  if(!apikey) return res.json(loghandler.notparam)
+  if(!text) return res.json(loghandler.nottext1)
+  if(!text2) return res.json(loghandler.nottext2)
+  
+  if(listkey.includes(apikey)){
+    zrapi 
+  .textpro("https://textpro.me/create-logo-style-marvel-studios-online-971.html", [
     text, text2
   ])
   .then((data) => {
