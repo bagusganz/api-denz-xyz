@@ -3915,11 +3915,9 @@ router.get('/textpro/thunder', async(req, res, next) => {
   const apikey = req.query.apikey;
 
   const text = req.query.text;
-  const text2 = req.query.text2;
   
   if(!apikey) return res.json(loghandler.notparam)
   if(!text) return res.json(loghandler.nottext)
-  if(!text2) return res.json(loghandler.nottext2)
   
   if(listkey.includes(apikey)){
     zrapi 
